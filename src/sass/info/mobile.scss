@@ -1,0 +1,115 @@
+& {
+	.page {
+		position: relative;
+	}
+	.head-row {
+	  flex-direction: column;
+	  align-items: flex-start;
+	  gap: 16px;
+	}
+
+	.sidebar {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		height: 100vh;
+		overflow-y: auto;
+		left: -270px;
+		z-index: 999;
+
+		&.active {
+			left: 0;
+
+			.sidebar-mob-btn {
+				left: 270px;
+				opacity: 1;
+			}
+		}
+
+		.sidebar-mob-btn {
+			display: block;
+			border: 0;
+			width: 30px;
+			min-height: 30px;
+			background: #000;
+			position: fixed;
+			top: 0;
+			left: 0px;
+			padding: 8px;
+			transition: .3s;
+			opacity: .8;
+
+			span {
+				height: 2px;
+				width: 100%;
+				background: #fff;
+				display: block;
+				position: relative;
+				&:after, &:before {
+					content: "";
+					height: 2px;
+					width: 100%;
+					background: #fff;
+					position: absolute;
+					left: 0;
+				}
+
+				&:before {
+					top: -6px;
+				}
+
+				&:after {
+					bottom: -6px;
+				}
+			}
+		}
+	}
+
+	.main {
+		max-width: 100%;
+	}
+
+	.head {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.tab-content {
+		padding-left: 0;
+		padding-right: 0;
+		margin: 16px auto;
+
+		.tab-item {
+			border-radius: 0;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
+	.tab-images {
+		flex-wrap: wrap;
+		img {
+			max-width: calc(50% - 10px);
+		}
+	}
+
+	.head-title {
+		font-size: 22px;
+	}
+
+	.tab-nav {
+		gap: 16px;
+		li {
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.tab-info {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+
+}

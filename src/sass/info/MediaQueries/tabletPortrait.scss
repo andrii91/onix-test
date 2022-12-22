@@ -1,0 +1,69 @@
+@import '../../mq';
+
+@media #{$tabletPortrait} {
+  // @import '../mobile';
+
+  & {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    left: -270px;
+    z-index: 999;
+
+    &.active {
+      left: 0;
+
+      .sidebar-mob-btn {
+        left: 270px;
+        opacity: 1;
+      }
+    }
+
+    .sidebar-mob-btn {
+      display: block;
+      border: 0;
+      width: 30px;
+      min-height: 30px;
+      background: #000;
+      position: fixed;
+      top: 0;
+      left: 0px;
+      padding: 8px;
+      transition: .3s;
+      opacity: .8;
+
+      span {
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        display: block;
+        position: relative;
+        &:after, &:before {
+          content: "";
+          height: 2px;
+          width: 100%;
+          background: #fff;
+          position: absolute;
+          left: 0;
+        }
+
+        &:before {
+          top: -6px;
+        }
+
+        &:after {
+          bottom: -6px;
+        }
+      }
+    }
+  }
+
+    .main {
+      max-width: 100%;
+    }
+  }
+}
